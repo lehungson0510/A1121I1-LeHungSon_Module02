@@ -1,3 +1,4 @@
+//Hiển thị số nguyên tố nhỏ hơn 100
 package ss2_LoopInJava.Bai_Tap;
 
 public class DisplayPrime2 {
@@ -13,7 +14,7 @@ public class DisplayPrime2 {
             }
             if(isPrime){
                 System.out.print( " "+number+" " );
-                
+
             }
             number++;
         }

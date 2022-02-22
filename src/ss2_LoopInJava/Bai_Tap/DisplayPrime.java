@@ -1,3 +1,4 @@
+//Hiển thị 20 số nguyên tố đầu tiên
 package ss2_LoopInJava.Bai_Tap;
 
 

@@ -1,3 +1,7 @@
+/*-Hiển thị:
+        Hình chữ nhật
+        Tam giác vuông (trên-phải, trên-trái, dưới-phải, dưới-trái)
+        Tam giác cân */
 package ss2_LoopInJava.Bai_Tap;
 
 import java.util.Scanner;
