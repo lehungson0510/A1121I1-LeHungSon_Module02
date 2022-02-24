@@ -5,6 +5,22 @@ import java.util.Scanner;
 public class FindMinimum {
     public static void main(String[] args) {
         Scanner input= new Scanner(System.in);
-        double[] array={1.3,4.5,1,5,7,9.2,21,21.1,11};
+        int[] array={10,4,5,5,7,9,21,21,11};
+        System.out.print("array: ");
+        for(int i:array){
+            System.out.print(i+" ");
+        }
+
+        System.out.println("\ngia tri nho nhat la: "+findMin(array));
+
+    }
+    public static int findMin(int[] arr){
+        int min=arr[0];
+        for (int i:arr) {
+            if (i < min) {
+                min=i;
+            }
+        }
+      return min;
     }
 }
