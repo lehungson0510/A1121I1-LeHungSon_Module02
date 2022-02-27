@@ -1,15 +1,14 @@
 package ss4_Oop.Bai_Tap.StopWatch;
 
+import java.util.Date;
+
 public class StopWatch {
-    private double startTime;
+    private long startTime;
     private double endTime;
 
-    public double getStartTime() {
-        return startTime;
+    public StopWatch(){
+        this.startTime=new Date();
     }
 
-    public double getEndTime() {
-        return endTime;
-    }
         
 }
