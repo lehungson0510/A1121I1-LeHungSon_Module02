@@ -1,6 +1,4 @@
-package ss6_inheritance.bai_tap.point_moveablePoint;
-
-import java.util.Scanner;
+package ss6_inheritance.bai_tap.point_moveable_point;
 
 public class MovablePointTest {
     public static void main(String[] args) {

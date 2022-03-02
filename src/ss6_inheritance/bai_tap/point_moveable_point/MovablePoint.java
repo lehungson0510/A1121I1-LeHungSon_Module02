@@ -1,4 +1,4 @@
-package ss6_inheritance.bai_tap.point_moveablePoint;
+package ss6_inheritance.bai_tap.point_moveable_point;
 
 import java.util.Arrays;
 
