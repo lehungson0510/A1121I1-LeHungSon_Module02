@@ -2,57 +2,57 @@ package ss8_clean_code_and_refactoring.bai_tap;
 
 public class TennisGame {
 
-    public static String getScore(String player1Name, String player2Name, int m_score1, int m_score2) {
-        String score = "";
+    public static String getScore(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
+        String result = "";
         int tempScore = 0;
-        if (m_score1 == m_score2) {
-            switch (m_score1) {
+        if (scorePlayer1 == scorePlayer2) {
+            switch (scorePlayer1) {
                 case 0:
-                    score = "Love-All";
+                    result = "Love-All";
                     break;
                 case 1:
-                    score = "Fifteen-All";
+                    result = "Fifteen-All";
                     break;
                 case 2:
-                    score = "Thirty-All";
+                    result = "Thirty-All";
                     break;
                 case 3:
-                    score = "Forty-All";
+                    result = "Forty-All";
                     break;
                 default:
-                    score = "Deuce";
+                    result = "Deuce";
                     break;
 
             }
-        } else if (m_score1 >= 4 || m_score2 >= 4) {
-            int minusResult = m_score1 - m_score2;
-            if (minusResult == 1) score = "Advantage player1";
-            else if (minusResult == -1) score = "Advantage player2";
-            else if (minusResult >= 2) score = "Win for player1";
-            else score = "Win for player2";
+        } else if (scorePlayer1 >= 4 || scorePlayer2 >= 4) {
+            int minusResult = scorePlayer1 - scorePlayer2;
+            if (minusResult == 1) result = "Advantage player1";
+            else if (minusResult == -1) result = "Advantage player2";
+            else if (minusResult >= 2) result = "Win for player1";
+            else result = "Win for player2";
         } else {
             for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = m_score1;
+                if (i == 1) tempScore = scorePlayer1;
                 else {
-                    score += "-";
-                    tempScore = m_score2;
+                    result += "-";
+                    tempScore = scorePlayer2;
                 }
                 switch (tempScore) {
                     case 0:
-                        score += "Love";
+                        result += "Love";
                         break;
                     case 1:
-                        score += "Fifteen";
+                        result += "Fifteen";
                         break;
                     case 2:
-                        score += "Thirty";
+                        result += "Thirty";
                         break;
                     case 3:
-                        score += "Forty";
+                        result += "Forty";
                         break;
                 }
             }
         }
-        return score;
+        return result;
     }
 }
