@@ -56,17 +56,21 @@ public class FuramaController {
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
             switch (input.nextInt()) {
-                case 1:{
+                case 1: {
                     employeeService.display();
                     break;
                 }
-                case 2:{
+                case 2: {
                     employeeService.addNew();
                     break;
                 }
-                case 3:{
+                case 3: {
                     employeeService.edit();
+                    break;
                 }
+                case 4:
+                    displayMainMenu();
+                    break;
             }
         }
     }
