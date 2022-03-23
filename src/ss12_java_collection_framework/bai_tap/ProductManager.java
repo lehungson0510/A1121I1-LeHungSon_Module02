@@ -5,29 +5,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductManager {
-    List <String> lists = new ArrayList<>();
-    public void addProduct(List lists){
-        lists.add();
+    List<Product> lists = new ArrayList<>();
+
+    public void addProduct(Product product) {
+        lists.add(product);
     }
 
-    public void editProduct(){
-
-    }
-
-    public void deleteProduct(){
-        lists.remove()
+    public void editProduct() {
 
     }
 
-    public void displayProduct(){
+    public void deleteProduct(Product product, int id) {
+
+        lists.remove(product);
 
     }
 
-    public void searchProduct(){
+    public void displayProduct(int index) {
+        lists.get(index);
+    }
+
+    public void searchProduct() {
 
     }
 
-    public void sortProduct(){
+    public void sortProduct() {
 
     }
 }
