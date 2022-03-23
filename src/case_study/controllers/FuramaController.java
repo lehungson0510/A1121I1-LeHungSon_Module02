@@ -1,5 +1,6 @@
 package case_study.controllers;
 
+import case_study.services.EmployeeService;
 import case_study.services.impl.EmployeeServiceImpl;
 
 import java.util.Scanner;
@@ -40,13 +41,13 @@ public class FuramaController {
                 case 6:
                     System.exit(6);
                 default:
-                    System.out.println("Choice again");
+                    System.out.println("\nChoice again");
             }
         }
     }
 
     public static void displayEmployeeMenu() {
-        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+        EmployeeService employeeService = new EmployeeServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("\n1. Display list employees\n" +
@@ -71,6 +72,8 @@ public class FuramaController {
                 case 4:
                     displayMainMenu();
                     break;
+                default:
+                    System.out.println("\nChoice again");
             }
         }
     }
@@ -136,3 +139,4 @@ public class FuramaController {
         }
     }
 }
+

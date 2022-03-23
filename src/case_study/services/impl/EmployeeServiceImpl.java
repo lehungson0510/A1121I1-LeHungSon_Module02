@@ -11,16 +11,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     static Scanner input = new Scanner(System.in);
     static List<Employee> employeeList = new ArrayList<>();
 
-
-    @Override
-    public void display() {
-        for (Employee employee : employeeList){
-            System.out.println(employee);
-        }
-    }
-
-    @Override
-    public void addNew() {
+    public Employee createInformation() {
         System.out.print("Input id: ");
         int id = input.nextInt();
         input.nextLine();
@@ -45,12 +36,38 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.print("Input salary: ");
         double salary = input.nextDouble();
 
-        Employee employee = new Employee(id, fullName, birthday, gender, idCard, phoneNumber, email, educationLevel, position, salary);
-        employeeList.add(employee);
+        return new Employee(id, fullName, birthday, gender, idCard, phoneNumber, email, educationLevel, position, salary);
+    }
+
+
+    @Override
+    public void display() {
+        for (Employee employee : employeeList) {
+            System.out.println(employee);
+        }
+    }
+
+    @Override
+    public void addNew() {
+        employeeList.add(createInformation());
     }
 
     @Override
     public void edit() {
-
+        System.out.print("Input the id you want to edit: ");
+        int id = input.nextInt();
+        int size = employeeList.size();
+        boolean flag = true;
+        for (int i = 0; i < size; i++) {
+            if (id == employeeList.get(i).getId()) {
+                System.out.print("\nInformation you want to edit: ");
+                System.out.println(employeeList.get(i));
+                employeeList.set(i, createInformation());
+                flag = false;
+            }
+            if (flag) {
+                System.out.println("\nId not found");
+            }
+        }
     }
 }
