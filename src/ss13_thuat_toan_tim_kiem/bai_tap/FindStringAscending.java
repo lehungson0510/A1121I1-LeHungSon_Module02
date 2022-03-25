@@ -15,11 +15,9 @@ public class FindStringAscending {
         }
 
         for (int i = 0; i < characterStack.size() - 1; i++) {
-            for (int j = i + 1; j < characterStack.size(); j++) {
-                if (characterStack.get(j) <= characterStack.get(i)) {
-                    characterStack.remove(j);
-                    j--;
-                }
+            if (characterStack.get(i + 1) <= characterStack.get(i)) {
+                characterStack.remove(i + 1);
+                i--;
             }
         }
 
