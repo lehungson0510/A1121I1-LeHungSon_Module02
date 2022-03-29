@@ -5,16 +5,35 @@ import java.util.Scanner;
 public class IllegalTriangleException {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Input a: ");
+        System.out.print("Input a: ");
         int a = input.nextInt();
-        System.out.println("Input b: ");
+        System.out.print("Input b: ");
         int b = input.nextInt();
-        System.out.println("Input c: ");
+        System.out.print("Input c: ");
         int c = input.nextInt();
-    }
-    public void throwError(int a, int b, int c){
-        if(a<0||b<0||c<0||(a+b)<c||(b+c)<a||(c+a)<b){
-            throw new illegalTriangle("")
+//        throwError(a, b ,c);
+
+        try {
+            throwError(a, b, c);
+        } catch (UserException e) {
+            System.out.println("The program is faulty: " + e.getMessage());
         }
     }
+
+        public static void throwError(int a, int b, int c) throws UserException {
+        if (a < 0 || b < 0 || c < 0 || ((a + b) <= c) || ((b + c)) <= a || ((c + a) <= b)) {
+            throw new UserException("Invalid side lengths");
+        } else System.out.println("Valid side lengths");
+
+    }
+
+//    public static void throwError(int a, int b, int c) {
+//        if (a < 0 || b < 0 || c < 0 || ((a + b) <= c) || ((b + c)) <= a || ((c + a) <= b)) {
+//            try {
+//                throw new UserException("Invalid side lengths");
+//            } catch (UserException e) {
+//                System.out.println("The program is faulty: " + e.getMessage());
+//            }
+//        } else System.out.println("Valid side lengths");
+//    }
 }

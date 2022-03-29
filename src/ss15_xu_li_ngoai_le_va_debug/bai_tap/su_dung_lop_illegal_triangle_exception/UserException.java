@@ -1,11 +1,11 @@
 package ss15_xu_li_ngoai_le_va_debug.bai_tap.su_dung_lop_illegal_triangle_exception;
 
-public class illegalTriangle extends Exception{
-    public illegalTriangle(){
+public class UserException extends Exception{
+    public UserException(){
         super();
     }
 
-    public illegalTriangle(String message){
+    public UserException(String message){
         super(message);
     }
 }
