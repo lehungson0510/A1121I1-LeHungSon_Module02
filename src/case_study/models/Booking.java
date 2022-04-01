@@ -2,15 +2,15 @@ package case_study.models;
 
 public class Booking {
     private String idBooking;
-    private int dateStar;
-    private int dateEnd;
+    private String dateStar;
+    private String dateEnd;
     private String idCustomer;
     private String nameService;
     private String typeService;
 
     public Booking(){}
 
-    public Booking(String idBooking, int dateStar, int dateEnd, String idCustomer, String nameService, String typeService) {
+    public Booking(String idBooking, String dateStar, String dateEnd, String idCustomer, String nameService, String typeService) {
         this.idBooking = idBooking;
         this.dateStar = dateStar;
         this.dateEnd = dateEnd;
@@ -27,19 +27,19 @@ public class Booking {
         this.idBooking = idBooking;
     }
 
-    public int getDateStar() {
+    public String getDateStar() {
         return dateStar;
     }
 
-    public void setDateStar(int dateStar) {
+    public void setDateStar(String dateStar) {
         this.dateStar = dateStar;
     }
 
-    public int getDateEnd() {
+    public String getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(int dateEnd) {
+    public void setDateEnd(String dateEnd) {
         this.dateEnd = dateEnd;
     }
 
