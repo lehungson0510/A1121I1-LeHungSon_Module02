@@ -29,11 +29,10 @@ public class FileUtils {
             while ((line = reader.readLine()) != null) {
                     sum += Integer.parseInt(line);
                     System.out.println(line);
-
             }
             System.out.println("Sum = "+sum);
-        } catch (IOException e) {
-            System.out.println("Không tồn tại file này");
+        } catch (Exception e) {
+            System.out.println("Không tồn tại file này hoặc file có dữ liệu bị lỗi");
         }
     }
 }

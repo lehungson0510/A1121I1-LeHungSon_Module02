@@ -6,11 +6,13 @@ public class Test {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         FileUtils fileUtils = new FileUtils();
-        fileUtils.writeToFile("danh sach so nguyen.txt");
+        System.out.println("Nhập file để ghi: ");
+        String fileWrite= input.nextLine();
+        fileUtils.writeToFile(fileWrite);
         System.out.println("ghi thanh cong");
+        System.out.println("Nhập file để đọc: ");
+        String fileRead = input.nextLine();
 
-        System.out.println("Nhập file: ");
-        String file = input.nextLine();
-        fileUtils.readFromToFile(file);
+        fileUtils.readFromToFile(fileRead);
     }
 }
