@@ -64,23 +64,31 @@ public class TestProduct {
     }
 
     public void display(String path) {
-        List<Product> products = readFileObject(path);
-        products.forEach(System.out::println);
+        try {
+            List<Product> products = readFileObject(path);
+            products.forEach(System.out::println);
+        } catch (Exception e) {
+            System.err.println("Chưa có sản phẩm nào");
+        }
     }
 
     public void searchProduct(String path) {
-        System.out.print("Input the id you want to find: ");
-        String id = input.nextLine();
-        int size = productList.size();
-        boolean flag = true;
-        for (Product product : readFileObject(path)) {
-            if (id.equals(product.getId())) {
-                System.out.println(product);
-                flag = false;
+        try {
+            System.out.print("Input the id you want to find: ");
+            String id = input.nextLine();
+            int size = productList.size();
+            boolean flag = true;
+            for (Product product : readFileObject(path)) {
+                if (id.equals(product.getId())) {
+                    System.out.println(product);
+                    flag = false;
+                }
             }
-        }
-        if (flag) {
-            System.out.println("Không tìm thấy");
+            if (flag) {
+                System.out.println("Không tìm thấy");
+            }
+        } catch (Exception e) {
+            System.err.println("Chưa có sản phẩm nào");
         }
     }
 
