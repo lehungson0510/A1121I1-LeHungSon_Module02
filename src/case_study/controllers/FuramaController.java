@@ -1,8 +1,10 @@
 package case_study.controllers;
 
+import case_study.services.BookingService;
 import case_study.services.CustomerService;
 import case_study.services.EmployeeService;
 import case_study.services.FacilityService;
+import case_study.services.impl.BookingServiceImpl;
 import case_study.services.impl.CustomerServiceImpl;
 import case_study.services.impl.EmployeeServiceImpl;
 import case_study.services.impl.FacilityServiceImpl;
@@ -173,6 +175,7 @@ public class FuramaController {
     }
     
     public static void displayBookingMenu() {
+        BookingService booking = new BookingServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("\n1. Add new booking\n" +
@@ -185,6 +188,16 @@ public class FuramaController {
             System.out.print("Input your choice: ");
             switch (Integer.parseInt(input.nextLine())) {
                 case 1:
+                    booking.addNew();
+                    break;
+                case 2:
+                    booking.display();
+                    break;
+                case 6:
+                    displayMainMenu();
+                    break;
+                default:
+                    System.out.println("Choice again ");
             }
         }
     }

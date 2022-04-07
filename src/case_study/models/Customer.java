@@ -6,6 +6,8 @@ public class Customer extends Person {
 
     public Customer(){}
 
+
+//    typeGuest: Diamond, Platinum, Gold, Silver, Member
     public Customer(int id, String fullName, String birthday, String gender, int idCard, int phoneNumber, String email, String typeGuest, String address) {
         super(id, fullName, birthday, gender, idCard, phoneNumber, email);
         this.typeGuest = typeGuest;

@@ -1,16 +1,16 @@
 package case_study.models;
 
 public class Booking {
-    private String idBooking;
+    private int idBooking;
     private String dateStar;
     private String dateEnd;
-    private String idCustomer;
-    private String nameService;
+    private Customer idCustomer;
+    private Facility nameService;
     private String typeService;
 
     public Booking(){}
 
-    public Booking(String idBooking, String dateStar, String dateEnd, String idCustomer, String nameService, String typeService) {
+    public Booking(int idBooking, String dateStar, String dateEnd, Customer idCustomer, Facility nameService, String typeService) {
         this.idBooking = idBooking;
         this.dateStar = dateStar;
         this.dateEnd = dateEnd;
@@ -19,11 +19,11 @@ public class Booking {
         this.typeService = typeService;
     }
 
-    public String getIdBooking() {
+    public int getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(String idBooking) {
+    public void setIdBooking(int idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -43,19 +43,19 @@ public class Booking {
         this.dateEnd = dateEnd;
     }
 
-    public String getIdCustomer() {
+    public Customer getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(String idCustomer) {
+    public void setIdCustomer(Customer idCustomer) {
         this.idCustomer = idCustomer;
     }
 
-    public String getNameService() {
+    public Facility getNameService() {
         return nameService;
     }
 
-    public void setNameService(String nameService) {
+    public void setNameService(Facility nameService) {
         this.nameService = nameService;
     }
 
@@ -65,5 +65,17 @@ public class Booking {
 
     public void setTypeService(String typeService) {
         this.typeService = typeService;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "idBooking=" + idBooking +
+                ", dateStar='" + dateStar + '\'' +
+                ", dateEnd='" + dateEnd + '\'' +
+                ", idCustomer=" + idCustomer +
+                ", nameService=" + nameService +
+                ", typeService='" + typeService + '\'' +
+                '}';
     }
 }
