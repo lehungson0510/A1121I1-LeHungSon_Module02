@@ -1,0 +1,2 @@
+ID BOOKING,DATE START,DATE END,ID CUSTOMER,NAME SERVICE,TYPE SERVICE
+1,11/11/1111,11/11/1111,Customer{id=1, fullName='Son', birthday='22', gender='Male', idCard=13456, phoneNumber=1234, email='son@gmail.com', typeGuest='Member', address='Hue'},Villa{nameService='a', area=200.0, cost=500.0, maxPeople=5, rentalType='Day', standardRoom='a', areaPool=20.0, numOfFloor=3},2
