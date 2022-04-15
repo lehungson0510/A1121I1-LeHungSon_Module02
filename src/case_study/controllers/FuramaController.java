@@ -1,13 +1,7 @@
 package case_study.controllers;
 
-import case_study.services.BookingService;
-import case_study.services.CustomerService;
-import case_study.services.EmployeeService;
-import case_study.services.FacilityService;
-import case_study.services.impl.BookingServiceImpl;
-import case_study.services.impl.CustomerServiceImpl;
-import case_study.services.impl.EmployeeServiceImpl;
-import case_study.services.impl.FacilityServiceImpl;
+import case_study.services.*;
+import case_study.services.impl.*;
 
 import java.util.Scanner;
 
@@ -18,8 +12,10 @@ public class FuramaController {
 
     public static void displayMainMenu() {
         boolean check = true;
+        int choice = 0;
         while (check) {
-            System.out.println("\n1. Employee Management\n" +
+            System.out.println("------------------MAIN MENU------------------\n" +
+                    "1. Employee Management\n" +
                     "2. Customer Management\n" +
                     "3. Facility Management \n" +
                     "4. Booking Management\n" +
@@ -27,8 +23,12 @@ public class FuramaController {
                     "6. Exit\n");
             System.out.print("Input your choice: ");
             Scanner input = new Scanner(System.in);
-
-            switch (input.nextInt()) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
                     displayEmployeeMenu();
                     break;
@@ -53,6 +53,7 @@ public class FuramaController {
     }
 
     public static void displayEmployeeMenu() {
+        int choice = 0;
         EmployeeService employeeService = new EmployeeServiceImpl();
         boolean check = true;
         while (check) {
@@ -62,7 +63,12 @@ public class FuramaController {
                     "4. Return main menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1: {
                     employeeService.display();
                     break;
@@ -86,6 +92,7 @@ public class FuramaController {
 
     public static void displayCustomerMenu() {
         CustomerService customerService = new CustomerServiceImpl();
+        int choice = 0;
         boolean check = true;
         while (check) {
             System.out.println("\n1. Display list customers\n" +
@@ -94,7 +101,12 @@ public class FuramaController {
                     "4. Return main menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
                     customerService.display();
                     break;
@@ -115,6 +127,7 @@ public class FuramaController {
 
     public static void displayFacilityMenu() {
         FacilityService facilityService = new FacilityServiceImpl();
+        int choice = 0;
         boolean check = true;
         while (check) {
             System.out.println("\n1. Display list facility\n" +
@@ -123,7 +136,12 @@ public class FuramaController {
                     "4. Return main menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
                     facilityService.display();
                     break;
@@ -144,6 +162,7 @@ public class FuramaController {
 
     public static void addNewFacilityMenu() {
         FacilityService facilityService = new FacilityServiceImpl();
+        int choice = 0;
         boolean check = true;
         while (check) {
             System.out.println("\n1. Add new Villa\n" +
@@ -152,7 +171,12 @@ public class FuramaController {
                     "4. Return facility menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
                     facilityService.addNewVilla();
                     displayFacilityMenu();
@@ -173,9 +197,11 @@ public class FuramaController {
             }
         }
     }
-    
+
     public static void displayBookingMenu() {
         BookingService booking = new BookingServiceImpl();
+        ContractService contract = new ContractServiceImpl();
+        int choice = 0;
         boolean check = true;
         while (check) {
             System.out.println("\n1. Add new booking\n" +
@@ -186,32 +212,57 @@ public class FuramaController {
                     "6. Return main menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
                     booking.addNew();
                     break;
                 case 2:
                     booking.display();
                     break;
+                case 3:
+                    contract.addNew();
+                    break;
+                case 4:
+                    contract.display();
+                    break;
+                case 5:
+                    contract.edit();
+                    break;
                 case 6:
                     displayMainMenu();
                     break;
                 default:
-                    System.out.println("Choice again ");
+                    System.out.println("\nChoice again");
             }
         }
     }
 
     public static void displayPromotionMenu() {
+        PromotionServiceImpl promotion = new PromotionServiceImpl();
         boolean check = true;
+        int choice =0;
         while (check) {
             System.out.println("\n1. Display list customers use service\n" +
                     "2. Display list customers get voucher\n" +
                     "3. Return main menu\n");
             Scanner input = new Scanner(System.in);
             System.out.print("Input your choice: ");
-            switch (Integer.parseInt(input.nextLine())) {
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("INPUT WRONG FORMAT");
+            }
+            switch (choice) {
                 case 1:
+                    promotion.displayUseService();
+                    break;
+                case 2:
+                    break;
             }
         }
     }

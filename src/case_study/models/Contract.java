@@ -1,15 +1,15 @@
 package case_study.models;
 
 public class Contract {
-    private String numberContract;
-    private String idBooking;
+    private int numberContract;
+    private int idBooking;
     private double deposit;
     private double totalPayments;
-    private String idCustomer;
+    private Customer idCustomer;
 
     public Contract(){}
 
-    public Contract(String numberContract, String idBooking, double deposit, double totalPayments, String idCustomer) {
+    public Contract(int numberContract, int idBooking, double deposit, double totalPayments, Customer idCustomer) {
         this.numberContract = numberContract;
         this.idBooking = idBooking;
         this.deposit = deposit;
@@ -17,19 +17,19 @@ public class Contract {
         this.idCustomer = idCustomer;
     }
 
-    public String getNumberContract() {
+    public int getNumberContract() {
         return numberContract;
     }
 
-    public void setNumberContract(String numberContract) {
+    public void setNumberContract(int numberContract) {
         this.numberContract = numberContract;
     }
 
-    public String getIdBooking() {
+    public int getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(String idBooking) {
+    public void setIdBooking(int idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -49,11 +49,22 @@ public class Contract {
         this.totalPayments = totalPayments;
     }
 
-    public String getIdCustomer() {
+    public Customer getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(String idCustomer) {
+    public void setIdCustomer(Customer idCustomer) {
         this.idCustomer = idCustomer;
+    }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "numberContract=" + numberContract +
+                ", idBooking=" + idBooking +
+                ", deposit=" + deposit +
+                ", totalPayments=" + totalPayments +
+                ", idCustomer=" + idCustomer +
+                '}';
     }
 }

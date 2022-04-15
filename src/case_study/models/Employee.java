@@ -1,11 +1,12 @@
 package case_study.models;
 
-public class Employee extends Person{
+public class Employee extends Person {
     private String educationLevel;
     private String position;
     private double salary;
 
-    public Employee(){}
+    public Employee() {
+    }
 
     public Employee(int id, String fullName, String birthday, String gender, int idCard, int phoneNumber, String email, String educationLevel, String position, double salary) {
         super(id, fullName, birthday, gender, idCard, phoneNumber, email);
@@ -40,7 +41,7 @@ public class Employee extends Person{
 
     @Override
     public String toString() {
-        return "Employee{" + super.toString()+
+        return "Employee{" + super.toString() +
                 ", educationLevel='" + educationLevel + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
